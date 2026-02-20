@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Nexora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
+            <img src="favicon.png" alt="Nexora Icon" class="logo-img">
+            <span class="logo-text">Nexora</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#features">Features</a>
+            <a href="privacy.html" style="color: white;">Privacy Policy</a>
+            <a href="index.html#download" class="btn-primary-sm">Download</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="hero-title fade-up">Privacy Policy</h1>
+            <p class="hero-subtitle fade-up delay-1" style="margin: 0 auto;">Effective Date: February 20, 2026</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="prose reveal">
+            <p>At Nexora, we believe that your infrastructure data is yours. Period. We built our product with a
+                <strong>local-first</strong> architecture precisely to ensure that your sensitive cluster information,
+                code, and audit logs remain on your machine.
+            </p>
+
+            <h2>1. Local-First Architecture</h2>
+            <p>Nexora is a native desktop application. It reads your local <code>kubeconfig</code> files, cloud
+                credentials, and Terraform states directly from your machine. <strong>We do not run a central SaaS
+                    server. We do not proxy your terminal sessions. We do not have access to your clusters.</strong></p>
+
+            <h2>2. The Audit Ledger</h2>
+            <p>Nexora features a built-in Audit Engine that records mutating actions and sensitive reads (like viewing
+                secrets or executing shells within pods). This data is stored in a local, append-only SQLite database
+                (<code>audit.db</code>) on your hard drive.</p>
+            <ul>
+                <li>The audit log is entirely local and under your control.</li>
+                <li>You may configure Nexora to export or forward these logs to your own SIEM (e.g., Splunk, Datadog),
+                    but this data is never sent to Nexora's servers.</li>
+            </ul>
+
+            <h2>3. Telemetry and Usage Data</h2>
+            <p>To improve Nexora, we may collect anonymous, aggregated usage analytics (e.g., feature adoption rates,
+                crash reports). This telemetry data is strictly anonymized and contains no identifiable infrastructure
+                data, cluster names, or resource configurations.</p>
+            <p><strong>Opting Out:</strong> Telemetry collection is entirely opt-in. You can disable telemetry entirely
+                in the Application Settings.</p>
+
+            <h2>4. Third-Party Integrations</h2>
+            <p>If you install community plugins or use third-party modules within Nexora, those plugins may have their
+                own data collection practices. Always review the privacy policies of third-party extensions before
+                enabling them.</p>
+
+            <h2>5. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify users of significant changes via
+                release notes within the application or via our website.</p>
+
+            <br><br>
+            <p>If you have any questions or concerns about how Nexora handles data, please contact us via our GitHub
+                repository or support channels.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="favicon.png" alt="Nexora Icon" class="logo-img">
+                        <span class="logo-text">Nexora</span>
+                    </div>
+                    <p>The Unified Infrastructure Desktop Platform.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#download">Download</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nexora. Built for engineers.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

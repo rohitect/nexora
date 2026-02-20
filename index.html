@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora | Unified Infrastructure Desktop Platform</title>
+    <meta name="description"
+        content="A local-first desktop application that gives DevOps engineers and developers a single pane of glass over Kubernetes, Terraform, Argo CD, GCP, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="favicon.png" alt="Nexora Icon" class="logo-img">
+            <span class="logo-text">Nexora</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#download" class="btn-primary-sm">Download</a>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-content">
+            <div class="badge fade-up">v1.0 Coming Soon</div>
+            <h1 class="hero-title fade-up delay-1">The Unified <span class="text-gradient">Infrastructure</span> IDE
+            </h1>
+            <p class="hero-subtitle fade-up delay-2">A local-first desktop application that gives DevOps engineers and
+                developers a single pane of glass over Kubernetes, Terraform, Argo CD, and more.</p>
+            <div class="hero-cta fade-up delay-3">
+                <a href="#download" class="btn-primary">Download for macOS</a>
+                <a href="#features" class="btn-secondary">Explore Features</a>
+            </div>
+            <div class="hero-image-container fade-up delay-4">
+                <div class="hero-image-mockup">
+                    <img src="applicationInterface.png" alt="Nexora IDE Interface"
+                        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <h2 class="section-title reveal">Stop Juggling Tabs</h2>
+            <p class="section-subtitle reveal">Modern infrastructure teams juggle dozens of CLI tools, browser tabs, and
+                dashboards. Nexora consolidates them into one native desktop app — think Lens IDE on steroids.</p>
+
+            <div id="features" class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon icon-audit"></div>
+                    <h3>Audit-First Forensics</h3>
+                    <p>Every user action—from <code>kubectl exec</code> to a Terraform apply—is recorded in an immutable
+                        local SQLite ledger. Full accountability and incident forensics out of the box.</p>
+                </div>
+
+                <div class="feature-card reveal delay-1">
+                    <div class="feature-icon icon-local"></div>
+                    <h3>Local-First Architecture</h3>
+                    <p>Runs on your machine, reads your existing kubeconfigs and cloud credentials. <strong>No SaaS
+                            dependency, no external servers, no privacy compromises.</strong></p>
+                </div>
+
+                <div class="feature-card reveal delay-2">
+                    <div class="feature-icon icon-kubernetes"></div>
+                    <h3>Advanced Kubernetes</h3>
+                    <p>A full-featured resource explorer, real-time log streaming, embedded terminal, Monaco-based YAML
+                        editor, and rich topology maps.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon icon-modules"></div>
+                    <h3>Module-Based Design</h3>
+                    <p>Each domain is a self-contained module. Ship Kubernetes first, add Terraform, Argo CD, and GCP
+                        controls incrementally as you scale.</p>
+                </div>
+
+                <div class="feature-card reveal delay-1">
+                    <div class="feature-icon icon-multi"></div>
+                    <h3>Multi-Cluster Native</h3>
+                    <p>Pin multiple clusters, view resources across them in unified tables, and detect config drift
+                        between staging and production seamlessly.</p>
+                </div>
+                <div class="feature-card reveal delay-2">
+                    <div class="feature-icon icon-secure"></div>
+                    <h3>Security & Compliance</h3>
+                    <p>Built-in pod security scanning, image vulnerability checks (Trivy), RBAC visualizer, and
+                        exportable compliance reports (SOC 2, ISO 27001).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="deep-dive">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-content reveal">
+                    <h2 class="section-title left">The Audit Engine</h2>
+                    <p>Auditing is not an afterthought; it is the backbone of Nexora.</p>
+                    <ul class="feature-list">
+                        <li><strong>Immutable Ledger:</strong> Tamper-evident hash chain stored locally.</li>
+                        <li><strong>Interceptor Pattern:</strong> No mutating action reaches the cluster without passing
+                            through the Audit Engine.</li>
+                        <li><strong>Rich Context:</strong> Captures OS user, target resource, operation, and complete
+                            YAML before/after diffs.</li>
+                        <li><strong>FTS5 Search:</strong> Millisecond-fast free-text search across millions of records.
+                        </li>
+                    </ul>
+                </div>
+                <div class="split-visual reveal">
+                    <div class="audit-visual">
+                        <div class="audit-row success">
+                            <span class="time">10:42:01</span>
+                            <span class="user">rohit@mac</span>
+                            <span class="action">Scaled deployment/nginx (3 → 5)</span>
+                        </div>
+                        <div class="audit-row fail">
+                            <span class="time">11:15:22</span>
+                            <span class="user">rohit@mac</span>
+                            <span class="action">Denied delete namespace/production</span>
+                        </div>
+                        <div class="audit-row success">
+                            <span class="time">13:02:45</span>
+                            <span class="user">rohit@mac</span>
+                            <span class="action">Exec shell into pod/api-worker-1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="download"
+        style="background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent 60%); padding: 6rem 0; text-align: center;">
+        <div class="container">
+            <h2 class="section-title reveal" style="margin-bottom: 1.5rem;">Ready to take control?</h2>
+            <p class="section-subtitle reveal" style="margin-bottom: 2.5rem; color: #d4d4d8;">Experience the ultimate
+                DevOps desktop application running directly on your machine.</p>
+            <div class="reveal">
+                <a href="#" class="btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;">Download for macOS
+                    (Apple Silicon)</a>
+                <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-muted);">Also available for Intel
+                    Macs, Windows, and Linux.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="favicon.png" alt="Nexora Icon" class="logo-img">
+                        <span class="logo-text">Nexora</span>
+                    </div>
+                    <p>The Unified Infrastructure Desktop Platform.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#download">Download</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nexora. Built for engineers.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
