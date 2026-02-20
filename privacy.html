@@ -7,7 +7,8 @@
     <title>Privacy Policy | Nexora</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
@@ -15,21 +16,27 @@
 
 <body>
     <nav class="navbar scrolled">
-        <a href="index.html" class="logo" style="text-decoration: none; color: white;">
+        <a href="index.html" class="logo">
             <img src="favicon.png" alt="Nexora Icon" class="logo-img">
             <span class="logo-text">Nexora</span>
         </a>
         <div class="nav-links">
             <a href="index.html#features">Features</a>
-            <a href="privacy.html" style="color: white;">Privacy Policy</a>
-            <a href="index.html#download" class="btn-primary-sm">Download</a>
+            <a href="index.html#how-it-works">How it Works</a>
+            <a href="privacy.html" style="color: var(--text-main);">Privacy</a>
+            <a href="index.html#download" class="btn-primary-sm"><span>Download</span></a>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1 class="hero-title fade-up">Privacy Policy</h1>
-            <p class="hero-subtitle fade-up delay-1" style="margin: 0 auto;">Effective Date: February 20, 2026</p>
+            <h1 class="hero-title fade-up" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">Privacy Policy</h1>
+            <p class="hero-subtitle fade-up delay-1" style="margin: 1rem auto 0;">Effective Date: February 20, 2026</p>
         </div>
     </header>
 
@@ -71,7 +78,7 @@
             <p>We may update this Privacy Policy from time to time. We will notify users of significant changes via
                 release notes within the application or via our website.</p>
 
-            <br><br>
+            <br>
             <p>If you have any questions or concerns about how Nexora handles data, please contact us via our GitHub
                 repository or support channels.</p>
         </div>
@@ -81,16 +88,17 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <div class="logo">
+                    <a href="index.html" class="logo">
                         <img src="favicon.png" alt="Nexora Icon" class="logo-img">
                         <span class="logo-text">Nexora</span>
-                    </div>
-                    <p>The Unified Infrastructure Desktop Platform.</p>
+                    </a>
+                    <p>The Unified Infrastructure Desktop Platform. Built for engineers who ship.</p>
                 </div>
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>Product</h4>
                         <a href="index.html#features">Features</a>
+                        <a href="index.html#how-it-works">How it Works</a>
                         <a href="index.html#download">Download</a>
                     </div>
                     <div class="link-group">
@@ -102,6 +110,15 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Nexora. Built for engineers.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/rohitect/nexora-ide" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>

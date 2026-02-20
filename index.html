@@ -9,160 +9,562 @@
         content="A local-first desktop application that gives DevOps engineers and developers a single pane of glass over Kubernetes, Terraform, Argo CD, GCP, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">
+        <a href="/" class="logo">
             <img src="favicon.png" alt="Nexora Icon" class="logo-img">
             <span class="logo-text">Nexora</span>
-        </div>
+        </a>
         <div class="nav-links">
             <a href="#features">Features</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="#download" class="btn-primary-sm">Download</a>
+            <a href="#kubernetes">Kubernetes</a>
+            <a href="#how-it-works">How it Works</a>
+            <a href="#download" class="btn-primary-sm"><span>Download</span></a>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <!-- Hero -->
     <header class="hero">
         <div class="hero-bg-glow"></div>
+        <div class="hero-grid"></div>
         <div class="container hero-content">
-            <div class="badge fade-up">v1.0 Coming Soon</div>
-            <h1 class="hero-title fade-up delay-1">The Unified <span class="text-gradient">Infrastructure</span> IDE
-            </h1>
-            <p class="hero-subtitle fade-up delay-2">A local-first desktop application that gives DevOps engineers and
-                developers a single pane of glass over Kubernetes, Terraform, Argo CD, and more.</p>
-            <div class="hero-cta fade-up delay-3">
-                <a href="#download" class="btn-primary">Download for macOS</a>
-                <a href="#features" class="btn-secondary">Explore Features</a>
+            <div class="hero-text">
+                <div class="badge fade-up">v1.0 Coming Soon</div>
+                <h1 class="hero-title fade-up delay-1">The Unified<br><span class="text-gradient">Infrastructure</span> IDE</h1>
+                <p class="hero-subtitle fade-up delay-2">A local-first desktop app that gives DevOps engineers a single
+                    pane of glass over Kubernetes, Terraform, Argo CD, and more.</p>
+                <div class="hero-cta fade-up delay-3">
+                    <a href="https://github.com/rohitect/nexora-ide-releases/releases" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="position:relative;z-index:1">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        <span>Download for macOS</span>
+                    </a>
+                    <a href="#features" class="btn-secondary">Explore Features</a>
+                </div>
             </div>
             <div class="hero-image-container fade-up delay-4">
                 <div class="hero-image-mockup">
                     <img src="applicationInterface.png" alt="Nexora IDE Interface"
-                        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        style="width: 100%; height: auto; display: block;">
                 </div>
             </div>
         </div>
     </header>
-    <section id="problem" class="problem-section">
+
+    <!-- Tech Bar -->
+    <div class="container">
+        <div class="tech-bar reveal">
+            <span class="tech-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                    <line x1="12" y1="22" x2="12" y2="15.5" />
+                    <polyline points="22 8.5 12 15.5 2 8.5" />
+                </svg>
+                Kubernetes
+            </span>
+            <span class="tech-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                    <line x1="4" y1="22" x2="4" y2="15" />
+                </svg>
+                Terraform
+            </span>
+            <span class="tech-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 4 23 10 17 10"/>
+                    <polyline points="1 20 1 14 7 14"/>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/>
+                    <path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/>
+                </svg>
+                Argo CD
+            </span>
+            <span class="tech-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+                Audit Engine
+            </span>
+            <span class="tech-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                Local-First
+            </span>
+            <span class="tech-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+                Native Desktop
+            </span>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Features -->
+    <section id="features" class="problem-section">
         <div class="container">
+            <div class="section-label reveal">Core Capabilities</div>
             <h2 class="section-title reveal">Stop Juggling Tabs</h2>
-            <p class="section-subtitle reveal">Modern infrastructure teams juggle dozens of CLI tools, browser tabs, and
-                dashboards. Nexora consolidates them into one native desktop app — think Lens IDE on steroids.</p>
+            <p class="section-subtitle reveal">Modern infrastructure teams juggle dozens of CLI tools, browser tabs,
+                and dashboards. Nexora consolidates them into one native desktop app.</p>
 
-            <div id="features" class="features-grid">
-                <div class="feature-card reveal">
-                    <div class="feature-icon icon-audit"></div>
+            <div class="features-grid reveal-stagger reveal">
+                <div class="feature-card">
+                    <div class="feature-icon icon-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                    </div>
                     <h3>Audit-First Forensics</h3>
-                    <p>Every user action—from <code>kubectl exec</code> to a Terraform apply—is recorded in an immutable
-                        local SQLite ledger. Full accountability and incident forensics out of the box.</p>
+                    <p>Every action — from <code>kubectl exec</code> to a Terraform apply — is recorded in an immutable
+                        local SQLite ledger with hash-chain integrity.</p>
                 </div>
 
-                <div class="feature-card reveal delay-1">
-                    <div class="feature-icon icon-local"></div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
                     <h3>Local-First Architecture</h3>
-                    <p>Runs on your machine, reads your existing kubeconfigs and cloud credentials. <strong>No SaaS
-                            dependency, no external servers, no privacy compromises.</strong></p>
+                    <p>Runs on your machine, reads your kubeconfigs and cloud credentials.
+                        <strong>No SaaS, no external servers, no privacy compromises.</strong>
+                    </p>
                 </div>
 
-                <div class="feature-card reveal delay-2">
-                    <div class="feature-icon icon-kubernetes"></div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                            <line x1="12" y1="22" x2="12" y2="15.5" />
+                            <polyline points="22 8.5 12 15.5 2 8.5" />
+                            <polyline points="2 15.5 12 8.5 22 15.5" />
+                            <line x1="12" y1="2" x2="12" y2="8.5" />
+                        </svg>
+                    </div>
                     <h3>Advanced Kubernetes</h3>
-                    <p>A full-featured resource explorer, real-time log streaming, embedded terminal, Monaco-based YAML
-                        editor, and rich topology maps.</p>
+                    <p>Full-featured resource explorer, real-time log streaming, embedded terminal, YAML editor, and
+                        rich detail drawers for 35+ resource types.</p>
                 </div>
 
-                <div class="feature-card reveal">
-                    <div class="feature-icon icon-modules"></div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" />
+                            <rect x="9" y="9" width="6" height="6" />
+                            <path d="M15 2v2" />
+                            <path d="M15 20v2" />
+                            <path d="M2 15h2" />
+                            <path d="M2 9h2" />
+                            <path d="M20 15h2" />
+                            <path d="M20 9h2" />
+                            <path d="M9 2v2" />
+                            <path d="M9 20v2" />
+                        </svg>
+                    </div>
                     <h3>Module-Based Design</h3>
                     <p>Each domain is a self-contained module. Ship Kubernetes first, add Terraform, Argo CD, and GCP
-                        controls incrementally as you scale.</p>
+                        controls incrementally.</p>
                 </div>
 
-                <div class="feature-card reveal delay-1">
-                    <div class="feature-icon icon-multi"></div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="18" r="3" />
+                            <circle cx="6" cy="6" r="3" />
+                            <path d="M13 6h3a2 2 0 0 1 2 2v7" />
+                            <path d="M11 18H8a2 2 0 0 1-2-2V9" />
+                        </svg>
+                    </div>
                     <h3>Multi-Cluster Native</h3>
                     <p>Pin multiple clusters, view resources across them in unified tables, and detect config drift
-                        between staging and production seamlessly.</p>
+                        between staging and production.</p>
                 </div>
-                <div class="feature-card reveal delay-2">
-                    <div class="feature-icon icon-secure"></div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
                     <h3>Security & Compliance</h3>
                     <p>Built-in pod security scanning, image vulnerability checks (Trivy), RBAC visualizer, and
-                        exportable compliance reports (SOC 2, ISO 27001).</p>
+                        exportable compliance reports.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <hr class="section-divider">
+
+    <!-- Kubernetes Features -->
+    <section id="kubernetes" class="k8s-section">
+        <div class="container">
+            <div class="section-label reveal" style="text-align: center; display: flex; justify-content: center;">Kubernetes</div>
+            <h2 class="section-title reveal">A Complete Kubernetes IDE</h2>
+            <p class="section-subtitle reveal">Not just a dashboard — a fully-featured development environment for
+                Kubernetes with 35+ resource types, real-time streaming, and desktop-native UX.</p>
+
+            <!-- Stats bar -->
+            <div class="k8s-stats reveal">
+                <div class="k8s-stat">
+                    <span class="k8s-stat-value">35+</span>
+                    <span class="k8s-stat-label">Resource Types</span>
+                </div>
+                <div class="k8s-stat-divider"></div>
+                <div class="k8s-stat">
+                    <span class="k8s-stat-value">26</span>
+                    <span class="k8s-stat-label">Dashboard Widgets</span>
+                </div>
+                <div class="k8s-stat-divider"></div>
+                <div class="k8s-stat">
+                    <span class="k8s-stat-value">77</span>
+                    <span class="k8s-stat-label">Audited Mutations</span>
+                </div>
+                <div class="k8s-stat-divider"></div>
+                <div class="k8s-stat">
+                    <span class="k8s-stat-value">6</span>
+                    <span class="k8s-stat-label">Terminal Themes</span>
+                </div>
+            </div>
+
+            <!-- Feature bento grid -->
+            <div class="k8s-grid reveal-stagger reveal">
+                <!-- Large card: Resource Explorer -->
+                <div class="k8s-card k8s-card-large">
+                    <div class="k8s-card-icon icon-indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
+                            <line x1="12" y1="22" x2="12" y2="15.5"/>
+                            <polyline points="22 8.5 12 15.5 2 8.5"/>
+                        </svg>
+                    </div>
+                    <h3>Full Resource Explorer</h3>
+                    <p>Browse, filter, and manage Pods, Deployments, StatefulSets, DaemonSets, Jobs, CronJobs, Services,
+                        Ingresses, ConfigMaps, Secrets, PVs, Nodes, RBAC, Network Policies, Custom Resources, and more —
+                        all with detail drawers, YAML editing, and bulk operations.</p>
+                    <div class="k8s-resource-tags">
+                        <span>Pods</span><span>Deployments</span><span>StatefulSets</span><span>Services</span>
+                        <span>Ingresses</span><span>ConfigMaps</span><span>Secrets</span><span>CRDs</span>
+                        <span>RBAC</span><span>Nodes</span><span>HPAs</span><span>PVs</span>
+                    </div>
+                </div>
+
+                <!-- Terminal & Shell -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 17 10 11 4 5"/>
+                            <line x1="12" y1="19" x2="20" y2="19"/>
+                        </svg>
+                    </div>
+                    <h3>Terminal & Pod Shell</h3>
+                    <p>Cluster-wide terminal and pod exec with tmux-style split panes — up to 6 panes per tab, drag-to-resize, and 6 built-in themes.</p>
+                </div>
+
+                <!-- Real-time Logs -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time Log Streaming</h3>
+                    <p>Stream logs from any pod in real-time with multi-container support, search, and automatic follow.</p>
+                </div>
+
+                <!-- File Transfer -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                            <line x1="12" y1="11" x2="12" y2="17"/>
+                            <polyline points="9 14 12 11 15 14"/>
+                        </svg>
+                    </div>
+                    <h3>File Manager</h3>
+                    <p>WinSCP-like dual-pane file browser for any pod. Upload, download, and manage files with capability auto-detection.</p>
+                </div>
+
+                <!-- Custom Dashboards -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Dashboards</h3>
+                    <p>26 drag-and-drop widgets — CPU/Memory gauges, pod status, node heatmaps, Prometheus PromQL charts, and more.</p>
+                </div>
+
+                <!-- YAML Editor -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3>YAML Editor</h3>
+                    <p>In-drawer CodeMirror YAML editor with syntax highlighting. Apply changes directly or diff before/after.</p>
+                </div>
+
+                <!-- Scale & Restart -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"/>
+                            <polyline points="1 20 1 14 7 14"/>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/>
+                            <path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/>
+                        </svg>
+                    </div>
+                    <h3>Scale, Restart & Drain</h3>
+                    <p>One-click scale replicas, rolling restarts, node cordon/drain, CronJob suspend/trigger, and bulk operations.</p>
+                </div>
+
+                <!-- Cross-Resource Navigation -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="5" r="3"/>
+                            <circle cx="6" cy="12" r="3"/>
+                            <circle cx="18" cy="19" r="3"/>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                        </svg>
+                    </div>
+                    <h3>Cross-Resource Navigation</h3>
+                    <p>Click through ownerReferences, roleBindings, and related resources. Follow the chain from Deployment → ReplicaSet → Pod → Node.</p>
+                </div>
+
+                <!-- Port Forwarding -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3>Port Forwarding</h3>
+                    <p>Map local ports to pod services with a single click. Access cluster-internal services from your dev machine.</p>
+                </div>
+
+                <!-- Custom Resources -->
+                <div class="k8s-card">
+                    <div class="k8s-card-icon icon-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/>
+                            <path d="M16 12h-4"/>
+                            <path d="M16 8h-4"/>
+                            <path d="M16 16h-4"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Resources (CRDs)</h3>
+                    <p>First-class CRD support with dynamic columns from additionalPrinterColumns. Browse, create, and delete CR instances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- How it Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-label reveal" style="text-align: center; display: flex; justify-content: center;">Getting Started</div>
+            <h2 class="section-title reveal">Up and Running in Minutes</h2>
+            <p class="section-subtitle reveal">No cloud accounts, no sign-ups, no agents to install on your clusters.</p>
+            <div class="steps-grid reveal-stagger reveal">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Download & Install</h3>
+                    <p>Grab the native binary for your platform. Apple Silicon, Intel, Windows, or Linux.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Point to Your Clusters</h3>
+                    <p>Nexora auto-detects your <code>kubeconfig</code> and cloud credentials. No reconfiguration needed.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Manage Everything</h3>
+                    <p>Explore resources, stream logs, exec into pods, edit YAML, and audit every action — all from one window.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Deep Dive: Audit Engine -->
     <section class="deep-dive">
         <div class="container">
             <div class="split-layout">
                 <div class="split-content reveal">
+                    <div class="section-label">Deep Dive</div>
                     <h2 class="section-title left">The Audit Engine</h2>
-                    <p>Auditing is not an afterthought; it is the backbone of Nexora.</p>
+                    <p>Auditing is not an afterthought — it is the backbone of Nexora.</p>
                     <ul class="feature-list">
-                        <li><strong>Immutable Ledger:</strong> Tamper-evident hash chain stored locally.</li>
-                        <li><strong>Interceptor Pattern:</strong> No mutating action reaches the cluster without passing
+                        <li><strong>Immutable Ledger</strong>Tamper-evident hash chain stored locally in SQLite with WAL mode.</li>
+                        <li><strong>Interceptor Pattern</strong>No mutating action reaches the cluster without passing
                             through the Audit Engine.</li>
-                        <li><strong>Rich Context:</strong> Captures OS user, target resource, operation, and complete
+                        <li><strong>Rich Context</strong>Captures OS user, target resource, operation, and complete
                             YAML before/after diffs.</li>
-                        <li><strong>FTS5 Search:</strong> Millisecond-fast free-text search across millions of records.
-                        </li>
+                        <li><strong>FTS5 Search</strong>Millisecond-fast free-text search across millions of records.</li>
                     </ul>
                 </div>
                 <div class="split-visual reveal">
                     <div class="audit-visual">
-                        <div class="audit-row success">
-                            <span class="time">10:42:01</span>
-                            <span class="user">rohit@mac</span>
-                            <span class="action">Scaled deployment/nginx (3 → 5)</span>
+                        <div class="audit-header">
+                            <span class="audit-dot red"></span>
+                            <span class="audit-dot yellow"></span>
+                            <span class="audit-dot green"></span>
+                            <span class="audit-header-title">audit.db — nexora</span>
                         </div>
-                        <div class="audit-row fail">
-                            <span class="time">11:15:22</span>
-                            <span class="user">rohit@mac</span>
-                            <span class="action">Denied delete namespace/production</span>
-                        </div>
-                        <div class="audit-row success">
-                            <span class="time">13:02:45</span>
-                            <span class="user">rohit@mac</span>
-                            <span class="action">Exec shell into pod/api-worker-1</span>
+                        <div class="audit-body">
+                            <div class="audit-row success">
+                                <span class="time">10:42:01</span>
+                                <span class="user">rohit@mac</span>
+                                <span class="action">Scaled deployment/nginx (3 → 5)</span>
+                            </div>
+                            <div class="audit-row fail">
+                                <span class="time">11:15:22</span>
+                                <span class="user">rohit@mac</span>
+                                <span class="action">Denied delete namespace/production</span>
+                            </div>
+                            <div class="audit-row info">
+                                <span class="time">11:32:08</span>
+                                <span class="user">rohit@mac</span>
+                                <span class="action">Exec shell into pod/api-worker-1</span>
+                            </div>
+                            <div class="audit-row success">
+                                <span class="time">13:02:45</span>
+                                <span class="user">rohit@mac</span>
+                                <span class="action audit-cursor">Applied configmap/app-config</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="download"
-        style="background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent 60%); padding: 6rem 0; text-align: center;">
+
+    <hr class="section-divider">
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
         <div class="container">
-            <h2 class="section-title reveal" style="margin-bottom: 1.5rem;">Ready to take control?</h2>
-            <p class="section-subtitle reveal" style="margin-bottom: 2.5rem; color: #d4d4d8;">Experience the ultimate
-                DevOps desktop application running directly on your machine.</p>
-            <div class="reveal">
-                <a href="#" class="btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;">Download for macOS
-                    (Apple Silicon)</a>
-                <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-muted);">Also available for Intel
-                    Macs, Windows, and Linux.</p>
+            <h2 class="section-title reveal">Ready to take control?</h2>
+            <p class="section-subtitle reveal">Experience the ultimate DevOps desktop application running directly on
+                your machine. No cloud, no agents, no compromises.</p>
+            <div class="download-buttons reveal">
+                <a href="https://github.com/rohitect/nexora-ide-releases/releases" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="position:relative;z-index:1">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>Download for macOS (Apple Silicon)</span>
+                </a>
+                <div class="platform-pills">
+                    <span class="platform-pill">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 4-8 4-12.5C20 5 16.42 2 12 2S4 5 4 9.5C4 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z" />
+                            <path d="M10 2c1 .5 2 2 2 5" />
+                            <path d="M14 2c-1 .5-2 2-2 5" />
+                        </svg>
+                        macOS Intel
+                    </span>
+                    <span class="platform-pill">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                        Windows
+                    </span>
+                    <span class="platform-pill">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 17 10 11 4 5" />
+                            <line x1="12" y1="19" x2="20" y2="19" />
+                        </svg>
+                        Linux
+                    </span>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <div class="logo">
+                    <a href="/" class="logo">
                         <img src="favicon.png" alt="Nexora Icon" class="logo-img">
                         <span class="logo-text">Nexora</span>
-                    </div>
-                    <p>The Unified Infrastructure Desktop Platform.</p>
+                    </a>
+                    <p>The Unified Infrastructure Desktop Platform. Built for engineers who ship.</p>
                 </div>
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>Product</h4>
                         <a href="#features">Features</a>
+                        <a href="#how-it-works">How it Works</a>
                         <a href="#download">Download</a>
                     </div>
                     <div class="link-group">
@@ -174,9 +576,19 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Nexora. Built for engineers.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/rohitect/nexora-ide" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
