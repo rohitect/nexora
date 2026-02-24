@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | Nexora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo">
+            <img src="favicon.png" alt="Nexora Icon" class="logo-img">
+            <span class="logo-text">Nexora</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#features">Features</a>
+            <a href="changelog.html" style="color: var(--text-main);">Changelog</a>
+            <a href="index.html#download" class="btn-primary-sm"><span>Download</span></a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="hero-title fade-up" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">Changelog</h1>
+            <p class="hero-subtitle fade-up delay-1" style="margin: 1rem auto 0;">What's new in Nexora</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="prose reveal">
+
+            <h2>v0.3.x &mdash; Current</h2>
+            <p><code>v0.3.2</code> is the latest release.</p>
+
+            <h3>Kubernetes Resource Coverage</h3>
+            <ul>
+                <li><strong>35+ resource types</strong> with full CRUD support &mdash; Pods, Deployments, StatefulSets,
+                    DaemonSets, ReplicaSets, Jobs, CronJobs, Services, Ingresses, Endpoints, NetworkPolicies,
+                    ConfigMaps, Secrets, HPAs, PVs, PVCs, StorageClasses, ServiceAccounts, Roles, ClusterRoles,
+                    RoleBindings, ClusterRoleBindings, Namespaces, PDBs, PriorityClasses, RuntimeClasses, Leases,
+                    MutatingWebhooks, ValidatingWebhooks, Events, and Custom Resources (CRDs + CRs).</li>
+                <li>Detail drawers for every resource with YAML view, events, and context-specific tabs.</li>
+                <li>Bulk operations: delete, scale, and more across multiple resources at once.</li>
+            </ul>
+
+            <h3>Custom Dashboard</h3>
+            <ul>
+                <li><strong>26 drag-and-drop widgets</strong> across 6 categories: cluster health, workloads, metrics,
+                    nodes, Prometheus, and content.</li>
+                <li>ECharts-powered sparklines, heatmaps, and time-series charts with zoom and pan.</li>
+                <li>Prometheus integration with PromQL editor, autocomplete, label explorer, and alert thresholds.</li>
+                <li>Widget grouping, full-screen mode, cross-widget namespace filtering.</li>
+                <li>Undo/redo (Cmd+Z / Cmd+Shift+Z) with 50-step history per cluster.</li>
+                <li>Full keyboard navigation and ARIA accessibility.</li>
+            </ul>
+
+            <h3>Audit Engine</h3>
+            <ul>
+                <li>Immutable, append-only SQLite ledger (<code>audit.db</code>) with SHA-256 hash-chain integrity
+                    verification.</li>
+                <li><strong>77 audited mutation handlers</strong> &mdash; every delete, scale, restart, suspend, trigger,
+                    cordon, drain, apply, replace, and create operation is recorded.</li>
+                <li>Full-text search (FTS5), timeline view, Kubernetes-specific filters, and per-record detail drawer.
+                </li>
+                <li>Startup integrity check with red banner warning if the chain is compromised.</li>
+            </ul>
+
+            <h3>Terminal</h3>
+            <ul>
+                <li><strong>tmux-style split panes</strong> &mdash; vertical (Cmd+D) and horizontal (Cmd+Shift+D)
+                    splits, up to 6 panes per tab.</li>
+                <li>6 built-in color themes (Nexora Dark, Dracula, Monokai, Solarized Dark, One Dark, Nord) with full
+                    customization of 18 ANSI colors, font family, size, line height, cursor style, and scrollback.</li>
+                <li>Terminal profile system with live preview and instant apply across all open terminals.</li>
+                <li>Keyboard-driven focus cycling (Cmd+Option+Arrow) and context menu splitting.</li>
+            </ul>
+
+            <h3>File Transfer</h3>
+            <ul>
+                <li><strong>WinSCP-like dual-pane file manager</strong> for pods &mdash; browse, upload, download, and
+                    delete files.</li>
+                <li>Capability detection (tar/find/stat/rm/mkdir) with graceful degradation.</li>
+                <li>Transfer queue with progress tracking.</li>
+            </ul>
+
+            <h3>Cross-Resource Navigation</h3>
+            <ul>
+                <li>Clickable cross-references between resources &mdash; ownerReferences, roleBindings, claimRefs, and
+                    more.</li>
+                <li>Automatic kind-to-resource mapping for seamless drill-down from any drawer.</li>
+            </ul>
+
+            <h3>Read-Only Mode</h3>
+            <ul>
+                <li>Per-cluster toggle that disables all mutations &mdash; delete, scale, restart, shell, file transfer,
+                    YAML apply.</li>
+                <li>Visual lock indicator in the cluster header; toast guard on all mutation handlers.</li>
+            </ul>
+
+            <h3>Other Highlights</h3>
+            <ul>
+                <li>Auto-update via GitHub Releases with download progress and one-click install.</li>
+                <li>One-click port forwarding for services and pods.</li>
+                <li>YAML editor powered by CodeMirror with syntax highlighting and apply/create support.</li>
+                <li>Real-time log streaming with multi-container support and search.</li>
+            </ul>
+
+            <br>
+
+            <h2>v0.2.x</h2>
+
+            <h3>Resource Cache</h3>
+            <ul>
+                <li>Kubernetes informer-based cache for all resource types &mdash; instant list loads with background
+                    watch updates.</li>
+                <li>Configurable cache per resource, automatic reconnection on watch errors.</li>
+            </ul>
+
+            <h3>Terminal Profiles</h3>
+            <ul>
+                <li>Customizable terminal themes with font settings, cursor styles, and scrollback configuration.</li>
+                <li>Profile management: create, edit, delete, and switch with a gear popover in the terminal tab bar.
+                </li>
+            </ul>
+
+            <h3>Keyboard Shortcuts</h3>
+            <ul>
+                <li>Shortcut keys across all 35 drawers &mdash; d (Detail), y (YAML), p (Pods), l (Logs), s (Shell), e
+                    (Endpoints), r (Rules), and more.</li>
+                <li>Esc in CodeMirror and xterm returns keyboard control to the drawer.</li>
+            </ul>
+
+            <h3>Bulk Operations</h3>
+            <ul>
+                <li>Multi-select with bulk delete and bulk scale across Deployments, StatefulSets, and ReplicaSets.</li>
+            </ul>
+
+            <br>
+
+            <h2>v0.1.x &mdash; Initial Release</h2>
+
+            <h3>Multi-Cluster Kubernetes Management</h3>
+            <ul>
+                <li>Connect to multiple clusters via local <code>kubeconfig</code> &mdash; no SaaS, no agents, no cloud
+                    accounts required.</li>
+                <li>Cluster tabs with independent resource views and namespace selection.</li>
+            </ul>
+
+            <h3>Resource Explorer</h3>
+            <ul>
+                <li>Categorized sidebar: Workloads, Network, Config, Storage, Access Control, Nodes, Namespaces, Events,
+                    Custom Resources.</li>
+                <li>Detail drawers with tabbed views: overview, YAML, events, pods, and resource-specific tabs.</li>
+            </ul>
+
+            <h3>Embedded Terminal</h3>
+            <ul>
+                <li>Pod exec with container selection and interactive shell.</li>
+                <li>xterm.js with fit addon, search, and web links.</li>
+            </ul>
+
+            <h3>Local-First Architecture</h3>
+            <ul>
+                <li>Everything runs on your machine. No telemetry by default, no external dependencies, no network calls
+                    beyond your clusters.</li>
+                <li>Built with Electron, React, and TypeScript for a native desktop experience.</li>
+            </ul>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="favicon.png" alt="Nexora Icon" class="logo-img">
+                        <span class="logo-text">Nexora</span>
+                    </a>
+                    <p>The Unified Infrastructure Desktop Platform. Built for engineers who ship.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#how-it-works">How it Works</a>
+                        <a href="index.html#download">Download</a>
+                        <a href="changelog.html">Changelog</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nexora. Built for engineers.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/rohitect/nexora-ide" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
